@@ -28,3 +28,31 @@
 
 Uma solução mais simples, basta digitar **sudo fuser -k 8000/tcp**.
 Isso deve matar todos os processos associados à porta 8000.
+
+### Como criar um arquivo requirements.txt em um projeto Django
+
+Para criar um arquivo `requirements.txt` em um projeto Django, você precisa seguir os seguintes passos:
+
+1. Abra o terminal na raiz do seu projeto Django.
+2. Ative o ambiente virtual do seu projeto, se você estiver usando um.
+3. Execute o comando `pip freeze > requirements.txt`.
+
+Este comando irá gerar um arquivo `requirements.txt` na raiz do seu projeto, que lista todas as bibliotecas Python instaladas no ambiente virtual atual, juntamente com suas versões. Isso é útil para garantir que todos que trabalham no projeto tenham as mesmas versões das bibliotecas.
+
+Aqui está o pseudocódigo:
+
+```plaintext
+# Pseudocódigo
+1. Abrir o terminal
+2. Navegar até a raiz do projeto Django
+3. Se estiver usando um ambiente virtual, ativá-lo
+4. Executar o comando `pip freeze > requirements.txt`
+```
+
+E aqui está o comando de terminal correspondente:
+
+```bash
+pip freeze > requirements.txt
+```
+
+Lembre-se de que este comando deve ser executado no ambiente virtual onde o Django e outras dependências do projeto estão instaladas.

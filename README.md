@@ -3,18 +3,18 @@
 </h1>
 
 <div align="center">
-  <img alt="GitHub top language" src="https://img.shields.io/github/languages/top/saulojustiniano1/django-overweb.svg" />
+  <img alt="GitHub top language" src="https://img.shields.io/github/languages/top/saulojustiniano1/overweb.svg" />
   
-  <img alt="GitHub language count" src="https://img.shields.io/github/languages/count/saulojustiniano1/django-overweb.svg" />
+  <img alt="GitHub language count" src="https://img.shields.io/github/languages/count/saulojustiniano1/overweb.svg" />
   
-  <img alt="Repository size" src="https://img.shields.io/github/repo-size/saulojustiniano1/django-overweb.svg" />
+  <img alt="Repository size" src="https://img.shields.io/github/repo-size/saulojustiniano1/overweb.svg" />
 
-  <a href="https://github.com/saulojustiniano1/esports-community/commits/master">
-    <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/saulojustiniano1/django-overweb.svg" />
+  <a href="https://github.com/saulojustiniano1/overweb/commits/master">
+    <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/saulojustiniano1/overweb.svg" />
   </a>
   
-  <a href="https://github.com/saulojustiniano1/django-overweb/issues">
-    <img alt="Repository issues" src="https://img.shields.io/github/issues/saulojustiniano1/django-overweb.svg" />
+  <a href="https://github.com/saulojustiniano1/overweb/issues">
+    <img alt="Repository issues" src="https://img.shields.io/github/issues/saulojustiniano1/overweb.svg" />
   </a>
 </div>
 

@@ -35,7 +35,8 @@ Este é um projeto desenvolvido para a disciplina de Web 1, utilizando o framewo
 ### Tecnologias Utilizadas
 
 - **Django**: Django é um framework de alto nível para Python que incentiva o desenvolvimento rápido e o design limpo e pragmático.
-- **SQLite**: SQLite é um sistema de gerenciamento de banco de dados SQL embutido sem servidor.
+- **SQLite3**: SQLite3 é um sistema de gerenciamento de banco de dados SQL embutido sem servidor.
+- **Postgres**: Postgres é um sistema de gerenciamento de banco de dados SQL de objeto-relacional.
 
 ### Como Executar
 

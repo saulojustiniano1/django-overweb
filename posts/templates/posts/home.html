@@ -4,29 +4,30 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="{% static 'posts/css/post_list.css' %}" />
     <link
       rel="shortcut icon"
       href="{% static 'posts/img/favicon.ico' %}"
       type="image/x-icon"
     />
-    <title>Lista de Postagens</title>
+    <link rel="stylesheet" href="{% static 'posts/css/home.css' %}" />
+    <title>Overweb</title>
   </head>
   <body>
     <div class="navbar">
       <img src="{% static 'posts/img/logo.png' %}" alt="Overweb" />
-      <a href="{% static '../' %}">Voltar</a>
     </div>
 
     <div class="container">
-      <h1>Lista de Postagens</h1>
-      <ul>
-        {% for post in posts %}
-        <li>
-          <a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a>
-        </li>
-        {% endfor %}
-      </ul>
+      <h1>Overweb</h1>
+      <p>
+        Overweb é uma plataforma de blog onde você pode criar, editar e excluir
+        postagens.
+      </p>
+    </div>
+
+    <div class="posts">
+      <h3>Postagens -></h3>
+      <a href="{% static '../posts/' %}">Links</a>
     </div>
   </body>
 </html>

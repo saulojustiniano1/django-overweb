@@ -1,14 +1,29 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'posts/css/post_detail.css' %}" />
+    <link
+      rel="shortcut icon"
+      href="{% static 'posts/img/favicon.ico' %}"
+      type="image/x-icon"
+    />
     <title>{{ post.title }}</title>
   </head>
   <body>
-    <h1>{{ post.title }}</h1>
-    <p>{{ post.content }}</p>
-    {% if post.image %}
-    <img src="{{ post.image.url }}" alt="{{ post.title}}" />
-    {% endif %}
+    <div class="navbar">
+      <img src="{% static 'posts/img/logo.png' %}" alt="Overweb" />
+      <a href="../../">Voltar</a>
+    </div>
+
+    <div class="container">
+      <h1>{{ post.title }}</h1>
+      <p>{{ post.content }}</p>
+      {% if post.image %}
+      <img src="{{ post.image.url }}" alt="{{ post.title }}" />
+      {% endif %}
+    </div>
   </body>
 </html>

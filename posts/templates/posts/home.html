@@ -9,25 +9,56 @@
       href="{% static 'posts/img/favicon.ico' %}"
       type="image/x-icon"
     />
-    <link rel="stylesheet" href="{% static 'posts/css/home.css' %}" />
+    <link rel="stylesheet" href="{% static 'posts/css/posts/home.css' %}" />
     <title>Overweb</title>
   </head>
   <body>
     <div class="navbar">
       <img src="{% static 'posts/img/logo.png' %}" alt="Overweb" />
+      <ul class="navbar-list">
+        <li><a href="/">Home</a></li>
+        <li><a href="/about/">Sobre</a></li>
+        <li><a href="/contact/">Contato</a></li>
+        <li><a href="/login/">Login</a></li>
+      </ul>
     </div>
 
+    {% if pertence_ao_grupo %}
+    <a href="{% url 'create_content' %}">Criar Conteúdo</a>
+    {% endif %}
+
     <div class="container">
-      <h1>Overweb</h1>
+      <h1>📦 Overweb</h1>
       <p>
         Overweb é uma plataforma de blog onde você pode criar, editar e excluir
-        postagens.
+        postagens. Crie sua conta e comece a postar agora mesmo! 🚀
+      </p>
+      <h1>Como funciona?</h1>
+      <p>
+        Para começar a postar, basta criar uma conta e fazer login. Depois de
+        logado, você pode criar, editar e excluir postagens. A plataforma é
+        simples e fácil de usar, então não perca tempo e comece a postar agora
+        mesmo!
+      </p>
+      <h1>Por que usar o Overweb?</h1>
+      <p>
+        O Overweb é uma plataforma de blog simples e fácil de usar. Você pode
+        criar, editar e excluir postagens de forma rápida e prática. Além disso,
+        a plataforma é gratuita e não possui anúncios, então você pode postar
+        sem se preocupar com nada. Crie sua conta agora mesmo e comece a postar!
+      </p>
+      <h1>Quem somos?</h1>
+      <p>
+        Somos uma equipe de desenvolvedores apaixonados por tecnologia e
+        programação. Criamos o Overweb com o objetivo de fornecer uma plataforma
+        de blog simples e fácil de usar. Esperamos que você goste da nossa
+        plataforma e que ela seja útil para você. Se tiver alguma dúvida ou
+        sugestão, entre em contato conosco. Estamos sempre prontos para ajudar!
       </p>
     </div>
 
-    <div class="posts">
-      <h3>Postagens -></h3>
-      <a href="{% static '../posts/' %}">Links</a>
-    </div>
+    <footer>
+      <p>&copy; 2024 Overweb. Todos os direitos reservados.</p>
+    </footer>
   </body>
 </html>

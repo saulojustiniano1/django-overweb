@@ -1,29 +1,23 @@
-{% load static %}
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="{% static 'posts/css/post_detail.css' %}" />
-    <link
-      rel="shortcut icon"
-      href="{% static 'posts/img/favicon.ico' %}"
-      type="image/x-icon"
-    />
-    <title>{{ post.title }}</title>
-  </head>
-  <body>
-    <div class="navbar">
-      <img src="{% static 'posts/img/logo.png' %}" alt="Overweb" />
-      <a href="../../">Voltar</a>
-    </div>
+{% extends 'base.html' %} {% block title %}Detalhes do Post: {{object.title}}
+{%endblock %} {% block content %} {% load static %}
+<link rel="stylesheet" href="{% static 'posts/css/posts/post_detail.css' %}" />
 
-    <div class="container">
-      <h1>{{ post.title }}</h1>
-      <p>{{ post.content }}</p>
-      {% if post.image %}
-      <img src="{{ post.image.url }}" alt="{{ post.title }}" />
-      {% endif %}
-    </div>
-  </body>
-</html>
+<div class="container">
+  <div class="header">
+    <h2>{{ object.title }}</h2>
+    <p>{{ object.content }}</p>
+  </div>
+  {% if object.image %}
+  <img style="width: 500px" src="{{object.image.url}}" alt="{{object.title}}" />
+  {% endif %}
+  <a href="{% url 'post_update' pk=object.pk %}">Editar</a>
+  <form
+    action="{% url 'post_delete' pk=object.pk %}"
+    method="post"
+    style="display: inline"
+  >
+    {% csrf_token %}
+    <button type="submit">Excluir</button>
+  </form>
+</div>
+{% endblock %}

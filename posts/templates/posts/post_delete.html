@@ -1,0 +1,13 @@
+{% extends 'base.html' %} {% block title %}Excluir Post: {{object.title}}
+{%endblock%} {% block content %} {% load static %}
+<link rel="stylesheet" href="{% static 'posts/css/posts/post_detail.css' %}" />
+
+<div class="container">
+  <h2>Excluir Post</h2>
+  <p>Você tem certeza que deseja excluir o post "{{ object.title }}"?</p>
+  <form action="{% url 'post_delete' pk=object.pk %}" method="post">
+    {% csrf_token %}
+    <button type="submit">Confirmar Exclusão</button>
+  </form>
+</div>
+{% endblock %}

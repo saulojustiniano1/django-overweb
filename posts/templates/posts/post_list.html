@@ -1,58 +1,54 @@
-{% load static %}
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link
-      rel="shortcut icon"
-      href="{% static 'posts/img/favicon.ico' %}"
-      type="image/x-icon"
-    />
-    <link
-      rel="stylesheet"
-      href="{% static 'posts/css/posts/post_list.css' %}"
-    />
-    <title>Lista de Posts</title>
-  </head>
-  <body>
-    <div class="navbar">
-      <img src="{% static 'posts/img/logo.png' %}" alt="Overweb" />
-      <ul class="navbar-list">
-        <li><a href="/">Home</a></li>
-        <li><a href="/about/">Sobre</a></li>
-        <li><a href="/contact/">Contato</a></li>
-      </ul>
-      <div class="user">
-        <a>{{ user.username }}</a>
-        <form action="{% url 'logout' %}" method="post">
-          {% csrf_token %}
-          <button type="submit">Log out</button>
-        </form>
-      </div>
-    </div>
+{% extends 'base.html' %} {% block title %}{{object.title}}{% endblock %}
+{%block content %} {% load static %}
+<link rel="stylesheet" href="{% static 'posts/css/posts/post_list.css' %}" />
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="{% static 'posts/css/pagination.css' %}"
+/>
 
-    <div class="post">
-      <a href="{% url 'post_create' %}">Criar Postagem</a>
-    <div/>
-
-    {% if USER %}
-    <a href="{% url 'post_create' %}">Criar Conteúdo </a>
+<div class="posts-container">
+  <h1>Lista de Posts</h1>
+  <form method="GET">
+    <input type="text" name="ti" placeholder="Pesquisar..." />
+    <select name="orderby">
+      <option value="pub_date">Data de Publicação</option>
+      <option value="title">Título</option>
+    </select>
+    <button type="submit">Pesquisar</button>
+  </form>
+  <ul>
+    {% for post in posts %}
+    <li class="post-item">
+      <span class="post-item-name">{{ post.title }}</span> -
+      <span class="post-item-name">{{ post.pub_date }}</span>
+      <a href="{% url 'post_detail' post.pk %}">Detalhes</a>
+      <a href="{% url 'post_update' post.pk %}">Editar</a>
+      <a href="{% url 'post_delete' post.pk %}">Excluir</a>
+    </li>
+    {% endfor %}
+  </ul>
+  {% if is_paginated %}
+  <ul class="pagination">
+    {% if page_obj.has_previous %}
+    <li><a href="?page=1">&laquo; Primeira</a></li>
+    <li>
+      <a href="?page={{ page_obj.previous_page_number }}">&lsaquo; Anterior</a>
+    </li>
+    {% endif %} {% for num in page_obj.paginator.page_range %} ---------------
+    {% if page_obj.number == num %}
+    <li class="active"><span>{{ num }}</span></li>
+    {% else %}
+    <li><a href="?page={{ num }}">{{ num }}</a></li>
+    {% endif %} {% endfor %} {% if page_obj.has_next %}
+    <li>
+      <a href="?page={{ page_obj.next_page_number }}">Próxima &rsaquo;</a>
+    </li>
+    <li>
+      <a href="?page={{ page_obj.paginator.num_pages }}">Última &raquo;</a>
+    </li>
     {% endif %}
-
-    <div class="container">
-      <h1>Lista de Posts</h1>
-      <ul class="container-list">
-        {% for post in posts %}
-        <li>
-          {{ post.title }} - {{ post.pub_date }}
-          <a href="{% url 'post_detail' post.pk %}">Detalhes</a>
-          <a href="{% url 'post_update' post.pk %}">Editar</a>
-          <a href="{% url 'post_delete' post.pk %}">Excluir</a>
-        </li>
-        {% endfor %} {% if pertence_ao_grupo %}
-        <a href="{% url 'create_content' %}">Criar Conteúdo </a>
-        {% endif %}
-      </ul>
-    </div>
-  </body>
-</html>
+  </ul>
+  {% endif %}
+</div>
+{% endblock %}

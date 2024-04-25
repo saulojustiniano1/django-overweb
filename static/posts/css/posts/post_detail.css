@@ -17,25 +17,6 @@ body {
   background-color: #fff;
 }
 
-.navbar {
-  background-color: #5271ff;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.navbar > a {
-  color: #fff;
-  font-size: 4rem;
-  margin-right: 4rem;
-  text-decoration: none;
-}
-
-.navbar > img {
-  height: 10rem;
-  margin-left: 4rem;
-}
-
 .container {
   display: flex;
   flex-direction: column;

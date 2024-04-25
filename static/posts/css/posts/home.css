@@ -17,32 +17,6 @@ body {
   background-color: #fff;
 }
 
-.navbar {
-  background-color: #5271ff;
-  display: flex;
-  justify-content: space-between;
-}
-
-.navbar > img {
-  height: 10rem;
-  margin-left: 4rem;
-}
-
-.navbar > .navbar-list {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  list-style: none;
-  padding-right: 20rem;
-  font-size: 2rem;
-  gap: 2rem;
-}
-
-.navbar > .navbar-list > li > a {
-  text-decoration: none;
-  color: #fff;
-}
-
 .container {
   height: 76.4vh;
   display: grid;
@@ -59,18 +33,4 @@ body {
 
 .container > p {
   font-size: 1.8rem;
-}
-
-footer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #5271ff;
-  color: #fff;
-  height: 5rem;
-  font-size: 2rem;
-}
-
-footer > p {
-  margin-right: 1rem;
 }

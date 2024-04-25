@@ -10,15 +10,31 @@
       type="image/x-icon"
     />
     <link rel="stylesheet" href="{% static 'posts/css/base.css' %}" />
-    <title>{% block title %}Meu Site{% endblock %}</title>
+    <title>{% block title %}Overweb{% endblock %}</title>
   </head>
   <body>
-    <div class="navbar">
+    <div class="logo">
       <img src="{% static 'posts/img/logo.png' %}" alt="Overweb" />
-      <ul class="navbar-list">
+    </div>
+    <div class="navbar">
+      <ul>
         <li><a href="/">Home</a></li>
-        <li><a href="/about/">Sobre</a></li>
-        <li><a href="/contact/">Contato</a></li>
+        <li><a href="#">Sobre</a></li>
+        <li><a href="#">Contato</a></li>
+
+        {% if user.is_authenticated %}
+        <li><a href="{% url 'post_list' %}">Lista de Posts</a></li>
+        <li><a href="{% url 'post_create' %}">Criar Post</a></li>
+
+        <form class="user" action="{% url 'logout' %}" method="post">
+          {% csrf_token %}
+          <a>{{ user.username }}</a>
+          <button class="logout" type="submit">Log out</button>
+        </form>
+        {% else %}
+        <li><a href="{% url 'login' %}">Login</a></li>
+        <li><a href="{% url 'register' %}">Registrar</a></li>
+        {% endif %}
       </ul>
     </div>
 

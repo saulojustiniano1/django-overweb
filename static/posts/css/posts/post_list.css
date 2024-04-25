@@ -15,104 +15,101 @@ body {
   background-color: #fff;
 }
 
-.navbar {
-  background-color: #5271ff;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  text-align: center;
-}
-
-.navbar > .navbar-list {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  list-style: none;
-  padding-right: 20rem;
-  font-size: 2rem;
-  gap: 2rem;
-}
-
-.navbar > .navbar-list > li > a {
-  text-decoration: none;
-  color: #fff;
-}
-
-.navbar > a {
-  color: #fff;
-  margin-right: 4rem;
-  text-decoration: none;
-}
-
-.navbar > .navbar-list > .user {
-  font-size: 1rem;
-}
-
-.navbar > img {
-  height: 10rem;
-  margin-left: 4rem;
-}
-
-.post {
+.posts-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   margin-top: 2rem;
+
+  margin: 2rem;
+  padding: 20px;
+  border: 0.1rem solid #ccc;
+  border-radius: 0.5rem;
+  background-color: #f9f9f9;
 }
 
-.post > a {
-  text-decoration: none;
-  color: #000;
-  background-color: #5271ff;
-  padding: 1rem 2rem;
-  border-radius: 1rem;
-  color: white;
-  font-size: 1.5rem;
+.posts-container > h1 {
+  margin-bottom: 2rem;
+  font-size: 2.4rem;
+  color: #333;
 }
 
-.user {
-  display: flex;
-  align-items: center;
-  padding-right: 2rem;
-  gap: 1rem;
+.posts-container > form {
+  margin-bottom: 2rem;
 }
 
-.user > a {
+.posts-container > form > input[type='text'] {
+  padding: 0.5rem;
+  width: 20rem;
+  font-size: 1.6rem;
+  border: 0.1rem solid #ccc;
+  border-radius: 0.4rem;
+}
+
+.posts-container > form > button {
+  padding: 0.5rem 1rem;
+  background-color: #007bff;
   color: #fff;
-  text-decoration: none;
-  font-size: 1.5rem;
+  border: none;
+  cursor: pointer;
+  border-radius: 1rem;
 }
 
-.user > form > button {
+.post-item {
+  list-style: none;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  border: 0.1rem solid #ddd;
+  border-radius: 0.5rem;
   background-color: #fff;
-  border-radius: 1rem;
-  padding: 0.7rem 1.3rem;
-  color: #5271ff;
-  font-size: 1.5rem;
+}
+
+.post-item > a {
+  text-decoration: none;
+  color: #007bff;
+  margin-right: 1rem;
+}
+
+.post-item > button {
+  margin-right: 1rem;
+  padding: 0.5rem 1rem;
   border: none;
+  border-radius: 0.3rem;
+  background-color: #007bff;
+  color: #fff;
   cursor: pointer;
 }
 
-.user > form > button:hover {
-  background-color: #0d545e;
-  color: #fff;
+.post-item > button:hover {
+  background-color: #0056b3;
 }
 
-.container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  margin-top: 2rem;
+.post-item-name {
+  font-weight: bold;
+  color: #333;
 }
 
-.container > h1 {
-  font-size: 4rem;
-  margin-bottom: 2rem;
+.post-item-name:hover {
+  color: #007bff;
 }
 
-.container > .container-list {
-  font-size: 2rem;
-  margin-bottom: 2rem;
+select {
+  padding: 0.8rem;
+  font-size: 1.6rem;
+  border: 0.1rem solid #ccc;
+  border-radius: 0.4rem;
+  background-color: #fff;
+  cursor: pointer;
+}
+
+select:focus {
+  outline: none;
+  border-color: #007bff; /* Cor azul para indicar foco */
+}
+
+select option {
+  padding: 0.8rem;
+  font-size: 1.6rem;
+  background-color: #fff;
 }
